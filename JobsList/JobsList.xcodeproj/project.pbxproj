@@ -13,6 +13,16 @@
 		ACE5E70D22945BE50079CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70C22945BE50079CA7E /* Assets.xcassets */; };
 		ACE5E71022945BE50079CA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70E22945BE50079CA7E /* LaunchScreen.storyboard */; };
 		ACE5E71B22945BE50079CA7E /* JobsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E71A22945BE50079CA7E /* JobsListTests.swift */; };
+		ACE5E72922945CAB0079CA7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72522945CAA0079CA7E /* Request.swift */; };
+		ACE5E72A22945CAB0079CA7E /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72622945CAA0079CA7E /* Dispatcher.swift */; };
+		ACE5E72B22945CAB0079CA7E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72722945CAA0079CA7E /* NetworkError.swift */; };
+		ACE5E72C22945CAB0079CA7E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72822945CAA0079CA7E /* Response.swift */; };
+		ACE5E730229466BA0079CA7E /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72F229466BA0079CA7E /* Job.swift */; };
+		ACE5E732229466D70079CA7E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E731229466D70079CA7E /* Address.swift */; };
+		ACE5E735229475480079CA7E /* JobsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E734229475480079CA7E /* JobsListRequest.swift */; };
+		ACE5E738229476AF0079CA7E /* HTTPURLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E737229476AF0079CA7E /* HTTPURLResponse+Extensions.swift */; };
+		ACE5E73B2294784F0079CA7E /* JobsListDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E73A2294784F0079CA7E /* JobsListDispatcher.swift */; };
+		ACE5E73D229481B40079CA7E /* JobsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E73C229481B40079CA7E /* JobsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +46,16 @@
 		ACE5E71622945BE50079CA7E /* JobsListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobsListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5E71A22945BE50079CA7E /* JobsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListTests.swift; sourceTree = "<group>"; };
 		ACE5E71C22945BE50079CA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACE5E72522945CAA0079CA7E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		ACE5E72622945CAA0079CA7E /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		ACE5E72722945CAA0079CA7E /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		ACE5E72822945CAA0079CA7E /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		ACE5E72F229466BA0079CA7E /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		ACE5E731229466D70079CA7E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		ACE5E734229475480079CA7E /* JobsListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListRequest.swift; sourceTree = "<group>"; };
+		ACE5E737229476AF0079CA7E /* HTTPURLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extensions.swift"; sourceTree = "<group>"; };
+		ACE5E73A2294784F0079CA7E /* JobsListDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListDispatcher.swift; sourceTree = "<group>"; };
+		ACE5E73C229481B40079CA7E /* JobsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +97,9 @@
 		ACE5E70422945BE40079CA7E /* JobsList */ = {
 			isa = PBXGroup;
 			children = (
+				ACE5E736229476900079CA7E /* Extensions */,
+				ACE5E72D22945CB20079CA7E /* Networking */,
+				ACE5E739229478240079CA7E /* Models */,
 				ACE5E70522945BE40079CA7E /* AppDelegate.swift */,
 				ACE5E70722945BE40079CA7E /* ViewController.swift */,
 				ACE5E70922945BE40079CA7E /* Main.storyboard */,
@@ -94,6 +117,53 @@
 				ACE5E71C22945BE50079CA7E /* Info.plist */,
 			);
 			path = JobsListTests;
+			sourceTree = "<group>";
+		};
+		ACE5E72D22945CB20079CA7E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ACE5E733229475380079CA7E /* Jobs */,
+				ACE5E72E229460F60079CA7E /* Abstractions */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		ACE5E72E229460F60079CA7E /* Abstractions */ = {
+			isa = PBXGroup;
+			children = (
+				ACE5E72622945CAA0079CA7E /* Dispatcher.swift */,
+				ACE5E72722945CAA0079CA7E /* NetworkError.swift */,
+				ACE5E72522945CAA0079CA7E /* Request.swift */,
+				ACE5E72822945CAA0079CA7E /* Response.swift */,
+			);
+			path = Abstractions;
+			sourceTree = "<group>";
+		};
+		ACE5E733229475380079CA7E /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				ACE5E734229475480079CA7E /* JobsListRequest.swift */,
+				ACE5E73A2294784F0079CA7E /* JobsListDispatcher.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		ACE5E736229476900079CA7E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACE5E737229476AF0079CA7E /* HTTPURLResponse+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ACE5E739229478240079CA7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACE5E73C229481B40079CA7E /* JobsList.swift */,
+				ACE5E72F229466BA0079CA7E /* Job.swift */,
+				ACE5E731229466D70079CA7E /* Address.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +268,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE5E70822945BE40079CA7E /* ViewController.swift in Sources */,
+				ACE5E72922945CAB0079CA7E /* Request.swift in Sources */,
+				ACE5E738229476AF0079CA7E /* HTTPURLResponse+Extensions.swift in Sources */,
+				ACE5E72A22945CAB0079CA7E /* Dispatcher.swift in Sources */,
 				ACE5E70622945BE40079CA7E /* AppDelegate.swift in Sources */,
+				ACE5E72C22945CAB0079CA7E /* Response.swift in Sources */,
+				ACE5E730229466BA0079CA7E /* Job.swift in Sources */,
+				ACE5E735229475480079CA7E /* JobsListRequest.swift in Sources */,
+				ACE5E732229466D70079CA7E /* Address.swift in Sources */,
+				ACE5E73B2294784F0079CA7E /* JobsListDispatcher.swift in Sources */,
+				ACE5E72B22945CAB0079CA7E /* NetworkError.swift in Sources */,
+				ACE5E73D229481B40079CA7E /* JobsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
