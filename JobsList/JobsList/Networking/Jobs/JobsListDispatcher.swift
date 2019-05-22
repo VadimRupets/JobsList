@@ -8,6 +8,11 @@
 
 import Foundation
 
-protocol JobsListDispatcherProtocol: Dispatcher where ResponseObject == JobsList, APIRequest == JobsListRequest { }
+protocol JobsListDispatcherProtocol {
+    func executeRequest(_ request: JobsListRequest, responseHandler: @escaping ((Response<JobsList>) -> Void))
+}
 
-class JobsListDispatcher: JobsListDispatcherProtocol { }
+struct JobsListDispatcher: JobsListDispatcherProtocol, Dispatcher {
+    typealias ResponseObject = JobsList
+    typealias APIRequest = JobsListRequest
+}

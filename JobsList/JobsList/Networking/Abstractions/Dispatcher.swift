@@ -11,7 +11,7 @@ import Foundation
 protocol Dispatcher {
     associatedtype ResponseObject: Decodable
     associatedtype APIRequest: Request
-    func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> ()))
+    func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> Void))
 }
 
 extension Dispatcher {
