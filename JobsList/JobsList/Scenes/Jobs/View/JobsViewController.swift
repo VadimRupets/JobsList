@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JobsViewController: UIViewController {
+class JobsViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak private var tableView: UITableView!
     
@@ -16,8 +16,6 @@ class JobsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = JobsViewModel(jobsListDispatcher: JobsListDispatcher())
         
         setupTableView()
         bindViewModel()
