@@ -11,6 +11,7 @@ import UIKit
 class JobsViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var noJobsView: UIView!
     
     var viewModel: JobsViewModel!
     
@@ -24,19 +25,22 @@ class JobsViewController: UIViewController, Storyboarded {
     private func setupTableView() {
         tableView.tableFooterView = UIView()
         tableView.register(cellClass: JobTableViewCell.self)
+        
+        tableView.backgroundView = noJobsView
     }
     
     private func bindViewModel() {
         viewModel.stateChanged = { [weak self] state in
+            ActivityIndicator.hide()
+            
+            guard let self = self else { return }
             switch state {
             case .loading:
-                break
+                ActivityIndicator.show()
             case .jobsFetched:
-                self?.tableView.reloadData()
+                self.tableView.reloadData()
             case .error(let error):
-                break
-            case .noData:
-                break
+                self.presentAlert(with: error)
             }
         }
         

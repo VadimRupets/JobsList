@@ -36,10 +36,29 @@
                         <viewLayoutGuide key="safeArea" id="1B1-Bq-qq3"/>
                     </view>
                     <connections>
+                        <outlet property="noJobsView" destination="2Vh-pv-XJl" id="r0i-qq-hT2"/>
                         <outlet property="tableView" destination="Okf-fT-nRc" id="OvD-9T-vvU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7P-UH-vog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="2Vh-pv-XJl">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No available jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-3m-ICt">
+                            <rect key="frame" x="55.5" y="53.5" width="129" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Ep0-3m-ICt" firstAttribute="centerX" secondItem="2Vh-pv-XJl" secondAttribute="centerX" id="9Xu-72-wqa"/>
+                        <constraint firstItem="Ep0-3m-ICt" firstAttribute="centerY" secondItem="2Vh-pv-XJl" secondAttribute="centerY" id="HZe-Ds-jxZ"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ECb-S4-lci"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="210" y="107"/>
         </scene>

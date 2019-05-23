@@ -18,6 +18,8 @@
 		0256503B2296C0D900698E0B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256503A2296C0D900698E0B /* Coordinator.swift */; };
 		0256503D2296C16400698E0B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256503C2296C16400698E0B /* Storyboarded.swift */; };
 		025650402296C21F00698E0B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256503F2296C21F00698E0B /* MainCoordinator.swift */; };
+		025650472296D49200698E0B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025650462296D49200698E0B /* ActivityIndicator.swift */; };
+		025650492296ED1300698E0B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025650482296ED1300698E0B /* UIViewController+Extensions.swift */; };
 		ACE5E70622945BE40079CA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E70522945BE40079CA7E /* AppDelegate.swift */; };
 		ACE5E70B22945BE40079CA7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70922945BE40079CA7E /* Main.storyboard */; };
 		ACE5E70D22945BE50079CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70C22945BE50079CA7E /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		0256503A2296C0D900698E0B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0256503C2296C16400698E0B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		0256503F2296C21F00698E0B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		025650462296D49200698E0B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		025650482296ED1300698E0B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		ACE5E70222945BE40079CA7E /* JobsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5E70522945BE40079CA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE5E70A22945BE40079CA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,8 +103,8 @@
 		025650172295642D00698E0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0256503F2296C21F00698E0B /* MainCoordinator.swift */,
 				0256503E2296C20900698E0B /* Abstractions */,
+				0256503F2296C21F00698E0B /* MainCoordinator.swift */,
 				025650182295643400698E0B /* Jobs */,
 			);
 			path = Scenes;
@@ -151,6 +155,14 @@
 			path = Abstractions;
 			sourceTree = "<group>";
 		};
+		025650452296D48400698E0B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				025650462296D49200698E0B /* ActivityIndicator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		ACE5E6F922945BE40079CA7E = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +184,7 @@
 		ACE5E70422945BE40079CA7E /* JobsList */ = {
 			isa = PBXGroup;
 			children = (
+				025650452296D48400698E0B /* Helpers */,
 				ACE5E736229476900079CA7E /* Extensions */,
 				ACE5E72D22945CB20079CA7E /* Networking */,
 				ACE5E739229478240079CA7E /* Models */,
@@ -230,6 +243,7 @@
 				0256502E22957A0200698E0B /* UITableViewCell+Extensions.swift */,
 				0256503022957ABF00698E0B /* UIView+Extensions.swift */,
 				0256503222957B6100698E0B /* UITableView+Extensions.swift */,
+				025650482296ED1300698E0B /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025650492296ED1300698E0B /* UIViewController+Extensions.swift in Sources */,
 				ACE5E72922945CAB0079CA7E /* Request.swift in Sources */,
 				025650232295655E00698E0B /* JobTableViewCellModel.swift in Sources */,
 				ACE5E738229476AF0079CA7E /* HTTPURLResponse+Extensions.swift in Sources */,
@@ -362,6 +377,7 @@
 				0256503122957ABF00698E0B /* UIView+Extensions.swift in Sources */,
 				ACE5E732229466D70079CA7E /* Address.swift in Sources */,
 				ACE5E73B2294784F0079CA7E /* JobsListDispatcher.swift in Sources */,
+				025650472296D49200698E0B /* ActivityIndicator.swift in Sources */,
 				0256503322957B6100698E0B /* UITableView+Extensions.swift in Sources */,
 				ACE5E72B22945CAB0079CA7E /* NetworkError.swift in Sources */,
 				ACE5E73D229481B40079CA7E /* JobsList.swift in Sources */,

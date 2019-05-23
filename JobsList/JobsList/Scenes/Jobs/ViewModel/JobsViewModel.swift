@@ -12,12 +12,11 @@ enum JobsViewModelState {
     case loading
     case jobsFetched
     case error(Error)
-    case noData
 }
 
 class JobsViewModel {
     
-    private var state: JobsViewModelState = .noData {
+    private var state: JobsViewModelState = .jobsFetched {
         didSet {
             DispatchQueue.main.async {
                 self.stateChanged?(self.state)
@@ -43,7 +42,7 @@ class JobsViewModel {
             switch response {
             case .data(let jobsList):
                 self.jobs = jobsList.jobs.map({ return JobTableViewCellModel(job: $0) })
-                self.state = self.jobs.count > 0 ? .jobsFetched : .noData
+                self.state = .jobsFetched
             case .error(let error):
                 self.state = .error(error)
             }
