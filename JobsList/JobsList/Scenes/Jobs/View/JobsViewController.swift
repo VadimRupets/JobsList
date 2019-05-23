@@ -10,10 +10,14 @@ import UIKit
 
 class JobsViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var noJobsView: UIView!
+    @IBOutlet weak private var tableView: UITableView!
+    
+    private let refreshControl = UIRefreshControl()
     
     var viewModel: JobsViewModel!
+    
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +26,28 @@ class JobsViewController: UIViewController, Storyboarded {
         bindViewModel()
     }
     
+    // MARK: - TableView setup
+    
     private func setupTableView() {
         tableView.tableFooterView = UIView()
         tableView.register(cellClass: JobTableViewCell.self)
-        
         tableView.backgroundView = noJobsView
+        
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshJobs), for: .valueChanged)
+    }
+    
+    @objc private func refreshJobs() {
+        viewModel.fetchJobs(refreshingCache: true)
     }
     
     private func bindViewModel() {
         viewModel.stateChanged = { [weak self] state in
-            ActivityIndicator.hide()
-            
             guard let self = self else { return }
+            
+            ActivityIndicator.hide()
+            self.refreshControl.endRefreshing()
+            
             switch state {
             case .loading:
                 ActivityIndicator.show()

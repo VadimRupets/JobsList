@@ -33,10 +33,10 @@ class JobsViewModel {
         self.jobsListDispatcher = jobsListDispatcher
     }
     
-    func fetchJobs() {
+    func fetchJobs(refreshingCache: Bool = false) {
         stateChanged?(.loading)
         
-        jobsListDispatcher.executeRequest(.init()) { [weak self] response in
+        jobsListDispatcher.executeRequest(.init(), refreshingCache: refreshingCache) { [weak self] response in
             guard let self = self else { return }
             
             switch response {

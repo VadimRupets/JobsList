@@ -11,7 +11,7 @@ import Foundation
 protocol Dispatcher {
     associatedtype ResponseObject: Decodable
     associatedtype APIRequest: Request
-    func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> Void))
+    func executeRequest(_ request: APIRequest, refreshingCache: Bool, responseHandler: @escaping ((Response<ResponseObject>) -> Void))
 }
 
 extension Dispatcher {
@@ -19,15 +19,34 @@ extension Dispatcher {
         return "http://www.coople.com/resources/api/"
     }
     
-    func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> ())) {
+    func executeRequest(_ request: APIRequest, refreshingCache: Bool = false, responseHandler: @escaping ((Response<ResponseObject>) -> Void)) {
         do {
-            let urlRequest = try prepareURLRequest(request)
-            let urlSession = URLSession(configuration: .default)
-            
-            let dataTask = urlSession.dataTask(with: urlRequest, completionHandler: { (data, urlResponse, error) in
+            let dataTaskHandler: (Data?, URLResponse?, Error?) -> Void = { (data, urlResponse, error) in
                 let response = Response<ResponseObject>(response: urlResponse as? HTTPURLResponse, data: data, error: error)
                 
                 responseHandler(response)
+            }
+            
+            let urlRequest = try prepareURLRequest(request)
+            
+            if refreshingCache {
+                URLCache.shared.removeCachedResponse(for: urlRequest)
+            } else if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
+                dataTaskHandler(cachedResponse.data, cachedResponse.response, nil)
+                return
+            }
+            
+            let urlSession = URLSession(configuration: .default)
+            
+            let dataTask = urlSession.dataTask(with: urlRequest, completionHandler: { (data, urlResponse, error) in
+                guard let urlResponse = urlResponse, let data = data else {
+                    responseHandler(.error(NetworkError.noData))
+                    return
+                }
+                
+                let cachedURLResponse = CachedURLResponse(response: urlResponse, data: data)
+                URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
+                dataTaskHandler(data, urlResponse, error)
             })
             
             print("Request resumed: \(urlRequest.description)")
