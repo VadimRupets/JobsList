@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: LocalizedError {
     case
     noData,
     corruptedData,
     badInput,
     notReachable
     
-    var localizedDescription: String {
+    var errorDescription: String? {
         switch self {
         case .noData:
             return "Server returned no data"

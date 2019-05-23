@@ -210,8 +210,8 @@
 		ACE5E72D22945CB20079CA7E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				ACE5E733229475380079CA7E /* Jobs */,
 				ACE5E72E229460F60079CA7E /* Abstractions */,
+				ACE5E733229475380079CA7E /* Jobs */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
