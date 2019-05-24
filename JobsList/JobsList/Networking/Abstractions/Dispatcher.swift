@@ -11,7 +11,7 @@ import Foundation
 protocol Dispatcher {
     associatedtype ResponseObject: Decodable
     associatedtype APIRequest: Request
-    func executeRequest(_ request: APIRequest, refreshingCache: Bool, responseHandler: @escaping ((Response<ResponseObject>) -> Void))
+    func executeRequest(_ request: APIRequest, refreshingCache: Bool, responseHandler: @escaping ((Result<ResponseObject, NetworkError>) -> Void))
 }
 
 extension Dispatcher {
@@ -19,10 +19,10 @@ extension Dispatcher {
         return "http://www.coople.com/resources/api/"
     }
     
-    func executeRequest(_ request: APIRequest, refreshingCache: Bool = false, responseHandler: @escaping ((Response<ResponseObject>) -> Void)) {
+    func executeRequest(_ request: APIRequest, refreshingCache: Bool = false, responseHandler: @escaping ((Result<ResponseObject, NetworkError>) -> Void)) {
         do {
             let dataTaskHandler: (Data?, URLResponse?, Error?) -> Void = { (data, urlResponse, error) in
-                let response = Response<ResponseObject>(response: urlResponse as? HTTPURLResponse, data: data, error: error)
+                let response = Result<ResponseObject, NetworkError>(response: urlResponse as? HTTPURLResponse, data: data, error: error)
                 
                 responseHandler(response)
             }
@@ -40,7 +40,7 @@ extension Dispatcher {
             
             let dataTask = urlSession.dataTask(with: urlRequest, completionHandler: { (data, urlResponse, error) in
                 guard let urlResponse = urlResponse, let data = data else {
-                    responseHandler(.error(NetworkError.noData))
+                    responseHandler(.failure(NetworkError.noData))
                     return
                 }
                 
@@ -52,7 +52,7 @@ extension Dispatcher {
             print("Request resumed: \(urlRequest.description)")
             dataTask.resume()
         } catch {
-            responseHandler(Response.error(error))
+            responseHandler(.failure(.undefined(error)))
         }
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol JobsListDispatcherProtocol {
-    func executeRequest(_ request: JobsListRequest, refreshingCache: Bool, responseHandler: @escaping ((Response<JobsList>) -> Void))
+    func executeRequest(_ request: JobsListRequest, refreshingCache: Bool, responseHandler: @escaping ((Result<JobsList, NetworkError>) -> Void))
 }
 
 struct JobsListDispatcher: JobsListDispatcherProtocol, Dispatcher {

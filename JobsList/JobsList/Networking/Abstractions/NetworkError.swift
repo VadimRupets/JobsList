@@ -13,7 +13,8 @@ enum NetworkError: LocalizedError {
     noData,
     corruptedData,
     badInput,
-    notReachable
+    notReachable,
+    undefined(Error)
     
     var errorDescription: String? {
         switch self {
@@ -25,6 +26,8 @@ enum NetworkError: LocalizedError {
             return "You sent a request that server could not understand"
         case .notReachable:
             return "Can not connect to server. Please check your internet connection"
+        case .undefined(let error):
+            return error.localizedDescription
         }
     }
 }

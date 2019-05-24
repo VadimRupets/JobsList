@@ -40,10 +40,10 @@ class JobsViewModel {
             guard let self = self else { return }
             
             switch response {
-            case .data(let jobsList):
+            case .success(let jobsList):
                 self.jobs = jobsList.jobs.map({ return JobTableViewCellModel(job: $0) })
                 self.state = .jobsFetched
-            case .error(let error):
+            case .failure(let error):
                 self.state = .error(error)
             }
         }

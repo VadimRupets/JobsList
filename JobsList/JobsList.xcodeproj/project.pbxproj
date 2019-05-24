@@ -20,6 +20,7 @@
 		025650402296C21F00698E0B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256503F2296C21F00698E0B /* MainCoordinator.swift */; };
 		025650472296D49200698E0B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025650462296D49200698E0B /* ActivityIndicator.swift */; };
 		025650492296ED1300698E0B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025650482296ED1300698E0B /* UIViewController+Extensions.swift */; };
+		0256504B2297DC6400698E0B /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256504A2297DC6400698E0B /* Result+Extensions.swift */; };
 		ACE5E70622945BE40079CA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E70522945BE40079CA7E /* AppDelegate.swift */; };
 		ACE5E70B22945BE40079CA7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70922945BE40079CA7E /* Main.storyboard */; };
 		ACE5E70D22945BE50079CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70C22945BE50079CA7E /* Assets.xcassets */; };
@@ -28,7 +29,6 @@
 		ACE5E72922945CAB0079CA7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72522945CAA0079CA7E /* Request.swift */; };
 		ACE5E72A22945CAB0079CA7E /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72622945CAA0079CA7E /* Dispatcher.swift */; };
 		ACE5E72B22945CAB0079CA7E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72722945CAA0079CA7E /* NetworkError.swift */; };
-		ACE5E72C22945CAB0079CA7E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72822945CAA0079CA7E /* Response.swift */; };
 		ACE5E730229466BA0079CA7E /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E72F229466BA0079CA7E /* Job.swift */; };
 		ACE5E732229466D70079CA7E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E731229466D70079CA7E /* Address.swift */; };
 		ACE5E735229475480079CA7E /* JobsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E734229475480079CA7E /* JobsListRequest.swift */; };
@@ -61,6 +61,7 @@
 		0256503F2296C21F00698E0B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		025650462296D49200698E0B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		025650482296ED1300698E0B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0256504A2297DC6400698E0B /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		ACE5E70222945BE40079CA7E /* JobsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5E70522945BE40079CA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE5E70A22945BE40079CA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		ACE5E72522945CAA0079CA7E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		ACE5E72622945CAA0079CA7E /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		ACE5E72722945CAA0079CA7E /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		ACE5E72822945CAA0079CA7E /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		ACE5E72F229466BA0079CA7E /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		ACE5E731229466D70079CA7E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		ACE5E734229475480079CA7E /* JobsListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListRequest.swift; sourceTree = "<group>"; };
@@ -222,7 +222,6 @@
 				ACE5E72622945CAA0079CA7E /* Dispatcher.swift */,
 				ACE5E72722945CAA0079CA7E /* NetworkError.swift */,
 				ACE5E72522945CAA0079CA7E /* Request.swift */,
-				ACE5E72822945CAA0079CA7E /* Response.swift */,
 			);
 			path = Abstractions;
 			sourceTree = "<group>";
@@ -244,6 +243,7 @@
 				0256503022957ABF00698E0B /* UIView+Extensions.swift */,
 				0256503222957B6100698E0B /* UITableView+Extensions.swift */,
 				025650482296ED1300698E0B /* UIViewController+Extensions.swift */,
+				0256504A2297DC6400698E0B /* Result+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -369,9 +369,9 @@
 				ACE5E70622945BE40079CA7E /* AppDelegate.swift in Sources */,
 				0256503D2296C16400698E0B /* Storyboarded.swift in Sources */,
 				025650402296C21F00698E0B /* MainCoordinator.swift in Sources */,
-				ACE5E72C22945CAB0079CA7E /* Response.swift in Sources */,
 				02565025229566FA00698E0B /* JobsViewModel.swift in Sources */,
 				ACE5E730229466BA0079CA7E /* Job.swift in Sources */,
+				0256504B2297DC6400698E0B /* Result+Extensions.swift in Sources */,
 				0256501B2295645A00698E0B /* JobsViewController.swift in Sources */,
 				ACE5E735229475480079CA7E /* JobsListRequest.swift in Sources */,
 				0256503122957ABF00698E0B /* UIView+Extensions.swift in Sources */,
