@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class JobsList: Decodable {
+class JobsList: Decodable {
     
     private enum RootCodingKeys: String, CodingKey {
         case data
@@ -22,7 +22,12 @@ final class JobsList: Decodable {
     let jobs: [Job]
     let total: Int
     
-    init(from decoder: Decoder) throws {
+    init(jobs: [Job], total: Int) {
+        self.jobs = jobs
+        self.total = total
+    }
+    
+    required init(from decoder: Decoder) throws {
         let rootContainer = try decoder.container(keyedBy: RootCodingKeys.self)
         let listContainer = try rootContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         

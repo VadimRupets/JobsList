@@ -11,7 +11,7 @@ import Foundation
 enum JobsViewModelState {
     case loading
     case jobsFetched
-    case error(Error)
+    case error(NetworkError)
 }
 
 class JobsViewModel {

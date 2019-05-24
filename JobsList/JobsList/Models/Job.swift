@@ -18,6 +18,11 @@ struct Job: Decodable {
     let name: String
     let address: Address
     
+    init(name: String, address: Address) {
+        self.name = name
+        self.address = address
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

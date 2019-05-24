@@ -20,6 +20,12 @@ struct Address: Decodable {
     let zip: String
     let city: String
     
+    init(street: String, zip: String, city: String) {
+        self.street = street
+        self.zip = zip
+        self.city = city
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
