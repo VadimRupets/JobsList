@@ -24,6 +24,7 @@
 		025650502297E9C100698E0B /* MockJobsListDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256504F2297E9C100698E0B /* MockJobsListDispatcher.swift */; };
 		025650522297EC7F00698E0B /* JobsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025650512297EC7F00698E0B /* JobsViewModelTests.swift */; };
 		025650542297F54100698E0B /* JobTableViewCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025650532297F54000698E0B /* JobTableViewCellModelTests.swift */; };
+		025650562298025800698E0B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 025650552298025800698E0B /* Localizable.strings */; };
 		ACE5E70622945BE40079CA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5E70522945BE40079CA7E /* AppDelegate.swift */; };
 		ACE5E70B22945BE40079CA7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70922945BE40079CA7E /* Main.storyboard */; };
 		ACE5E70D22945BE50079CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE5E70C22945BE50079CA7E /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		0256504F2297E9C100698E0B /* MockJobsListDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJobsListDispatcher.swift; sourceTree = "<group>"; };
 		025650512297EC7F00698E0B /* JobsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModelTests.swift; sourceTree = "<group>"; };
 		025650532297F54000698E0B /* JobTableViewCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCellModelTests.swift; sourceTree = "<group>"; };
+		025650552298025800698E0B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		ACE5E70222945BE40079CA7E /* JobsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5E70522945BE40079CA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE5E70A22945BE40079CA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				ACE5E70522945BE40079CA7E /* AppDelegate.swift */,
 				ACE5E70922945BE40079CA7E /* Main.storyboard */,
 				ACE5E70C22945BE50079CA7E /* Assets.xcassets */,
+				025650552298025800698E0B /* Localizable.strings */,
 				ACE5E70E22945BE50079CA7E /* LaunchScreen.storyboard */,
 				ACE5E71122945BE50079CA7E /* Info.plist */,
 			);
@@ -353,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025650562298025800698E0B /* Localizable.strings in Resources */,
 				ACE5E71022945BE50079CA7E /* LaunchScreen.storyboard in Resources */,
 				ACE5E70D22945BE50079CA7E /* Assets.xcassets in Resources */,
 				ACE5E70B22945BE40079CA7E /* Main.storyboard in Resources */,

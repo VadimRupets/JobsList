@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  JobsList
+
+  Created by Vadzim Rupets on 5/24/19.
+  Copyright © 2019 Vadim Rupets. All rights reserved.
+*/
+
+"error" = "Error";
+"noDataError" = "Server returned no data";
+"corruptedDataError" = "Returned data is corrupted and can't be read";
+"badInputError" = "You sent a request that server could not understand";
+"notReachableError" = "Can not connect to server. Please check your internet connection";
+

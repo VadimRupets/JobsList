@@ -19,13 +19,13 @@ enum NetworkError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noData:
-            return "Server returned no data"
+            return NSLocalizedString("noDataError", comment: "")
         case .corruptedData:
-            return "Returned data is corrupted and can't be read"
+            return NSLocalizedString("corruptedDataError", comment: "")
         case .badInput:
-            return "You sent a request that server could not understand"
+            return NSLocalizedString("badInputError", comment: "")
         case .notReachable:
-            return "Can not connect to server. Please check your internet connection"
+            return NSLocalizedString("notReachableError", comment: "")
         case .undefined(let error):
             return error.localizedDescription
         }
